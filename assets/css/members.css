@@ -9,8 +9,20 @@
   html,body{
     scroll-behavior: smooth;
     overflow-x: hidden;
-    background-image: url(../images/How\ to\ Make\ a\ Cheap\ Choir\ Robe\ _\ eHow_com.jpg);
-    background-position: cover;
+    /* background-image: url(../images/How\ to\ Make\ a\ Cheap\ Choir\ Robe\ _\ eHow_com.jpg);
+    background-position: cover; */
+  }
+
+  body{
+    height: 100vh;
+    background: linear-gradient(
+        to right,
+        #b981cf 0%,
+        #b981cf 0% 50%,
+        powderblue 50%,
+        powderblue  100%
+
+    );
   }
 
   /* .area{
@@ -34,13 +46,16 @@
     border-radius: 30px;
   }
   
+  .popup-content h2{
+    color: red;
+  }
 
   .area{
     
     /* justify-content: center; */
     width: 75%;
     border-radius: 10px;
-    background-color: rgb(229, 160, 233);
+    background-color: #b981cf;
     margin: 50px auto;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
     padding: 50px 20px;
@@ -61,19 +76,21 @@
    } */
 
    
+   
 
   
    
    .input {
     width: 50%;
-    padding: 10px 0;
+    padding: 10px ;
     font-size: 16px;
-    color: #1f1a1a;
+    color: #000000 !important;
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid rgba(255,255,255, .7);
     outline: none;
     background: transparent;
+    border-radius: 5px;
    }
 
    .form-inner{
@@ -85,12 +102,19 @@
    .side{
   display: flex;
   gap: 10px;
+  color: black;
    }
 
   select{
     width: 40%;
     height: 50px;
-    background: transparent;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  #wing{
+    color: black;
   }
 
   .sel{
@@ -116,11 +140,13 @@
     .side{
       display: block;
       flex-direction: column;
+      color: black;
     }
     .input{
       width: 100%;
       padding: 1em;
       margin: 0 0 1.2rem;
+      color: #000000;
     }
 
     .area{
@@ -166,12 +192,23 @@
 
 
   .submit{
-    background-color: purple;
+    background-color: rebeccapurple;
     border-radius: 20px;
     border-color: transparent;
     cursor: pointer;
     width: 300px;
     height: 50px;
+    transition: 0.5s;
+  }
+
+  .submit:hover{
+    background: transparent;
+    border: 1px solid rebeccapurple;
+  }
+
+  .reset:hover{
+    background-color: transparent;
+    border: 1px solid royalblue;
   }
 
   .reset{
@@ -181,6 +218,7 @@
     cursor: pointer;
     width: 300px;
     height: 50px;
+    transition: 0.5s;
   }
 
   .popup {

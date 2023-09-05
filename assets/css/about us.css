@@ -852,6 +852,8 @@ box-shadow: 0 0 10px #333;
   filter: invert();
 }
 
+
+
 .navbar ul li a {
   background: transparent;
   color: black;
@@ -860,12 +862,27 @@ box-shadow: 0 0 10px #333;
   padding: 7px 13px;
   text-decoration: none;
   border-radius: 16px;
+  position: relative;
+}
+.navbar ul li a::before{
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 2.5px;
+  content: '';
+  transform: scaleX(0);
+  background: green;
+  transition: .35s ease;
 }
 
-.navbar a:hover {
-  transition: 0.5s;
-  border-radius: 16px;
-  background-color: green;
+.navbar ul li a.active::before,
+.navbar ul li a:hover::before{
+  transform: scaleX(1);
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+  color: green !important;
 }
 
 .checkbtn {
@@ -1026,11 +1043,11 @@ box-shadow: 0 0 10px #333;
   
 }
 
-.crt{
+/* .crt{
   height: 100vh;
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-}
+} */
 
 .slider-container {
   width: 100%;
@@ -1042,24 +1059,28 @@ box-shadow: 0 0 10px #333;
 }
 
 
-.slider-container img{
+/* .slider-container img{
   object-fit: cover;
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-}
+} */
 
 /* .slide img{
   width: 100%;
   object-fit: cover;
 } */
 
+/* @keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(600px); }
+} */
 .slide {
   width: 100%;
   height: 100vh;
   background-size: cover;
   background-position: center;
   position: absolute;
-  animation: slide 20s infinite;
+  animation: slide 30s infinite;
   object-fit: cover;
   opacity: 0;
   z-index: 2;
@@ -1086,10 +1107,20 @@ box-shadow: 0 0 10px #333;
   font-size: 4vw;
   color: #fff;
 }
+
+.slideContent q{
+  color: white;
+  font-size: 3vw;
+  margin-inline: auto;
+  padding: 20px;
+}
+
 .slideContent p{
   max-width: 557px;
-  
+  color: whitesmoke;
+  font-size: 2.5vw;
   margin-inline: auto;
+  text-align: center;
 
 }
 .slideContent h2, .slideContent p{
@@ -1129,8 +1160,13 @@ box-shadow: 0 0 10px #333;
 
 
 @media screen and (max-width:768px){
-
-
+ 
+  .slideContent q {
+    font-size: 29px;
+  }
+  .slideContent p{
+    font-size: 24px;
+  }
   .wings .content{
     margin-top: 32px;
     padding: 1.5em;
@@ -1207,8 +1243,8 @@ box-shadow: 0 0 10px #333;
  
 
   .navbar ul li a {
-    font-size: 15px;
-    color: whitesmoke;
+    font-size: 20px;
+    color: white !important;
     box-shadow: #333;
     border-radius: 15px;
   }
@@ -1226,11 +1262,11 @@ box-shadow: 0 0 10px #333;
  }
 
  .navbar ul div:nth-child(2){
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 40px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
  }
 
 

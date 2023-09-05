@@ -159,6 +159,7 @@ box-shadow: 0 0 10px #333;
 .navbar ul div:nth-child(1){
   display: flex;
  justify-content: flex-end;
+
   flex: 0 0 50%;
 }
 .navbar ul div:nth-child(2){
@@ -254,8 +255,8 @@ box-shadow: 0 0 10px #333;
  
 
   .navbar ul li a {
-    font-size: 15px;
-    color: whitesmoke;
+    font-size: 20px;
+    color: white !important;
     box-shadow: #333;
     border-radius: 15px;
   }
@@ -276,18 +277,22 @@ box-shadow: 0 0 10px #333;
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     margin-top: 10px;
  }
 
- 
+ a:hover,
+  a.active{
+    transition: 0.5s;
+    gap: 10px;
+  }
 
   
 
   a:hover,
   a.active {
-    background: none;
-    color: orange;
+    filter: brightness(90%);
+    transform: scale(1.1);
   }
 
   #check:checked~ul {
@@ -835,11 +840,13 @@ section{
 
 .ministry{
   margin-bottom: 30px;
+  margin-top: 100px;
 }
 
 .ministry h1 {
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  font-size: 30px;
 }
 
 .ministry span {
@@ -847,6 +854,32 @@ section{
 }
 
 .ministry h1::after {
+  content: '';
+  background: darkgreen;
+  display: block;
+  height: 2px;
+  width: 205px;
+  margin: 10px auto 5px;
+
+}
+
+.ministrys{
+  margin-bottom: 30px;
+  margin-top: 100px;
+  padding: 1.2em;
+}
+
+.ministrys h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+}
+
+.ministrys span {
+  color: rebeccapurple;
+}
+
+.ministrys h1::after {
   content: '';
   background: darkgreen;
   display: block;
@@ -986,9 +1019,10 @@ width: 45%;
 
 .adultservice{
   display: flex;
-  padding: 30px;
+  padding: 5em;
   align-items: center;
   position: relative;
+  
 }
 .adultservice:nth-child(even) .halfCircle{
   left: -120px !important;
@@ -1588,12 +1622,18 @@ form .btn input{
  grid-template-columns: repeat(1, 1fr);
  margin:3rem 0 6rem;
 }
+
+.etab1:hover{
+  transform: scale(1.1);
+  z-index: 2;
+}
 .etab1{
   background-color: #fff;
   height: 60px;
   margin-bottom: 1rem;
   border-radius: 5px;
   display: flex;
+  transition: 0.5s;
   align-items: center;
   justify-content: space-between;
   padding: 0 15px 0 0;
@@ -1622,16 +1662,91 @@ position: relative;
   font-size: 1.1rem;
   margin-left: 3rem;
 }
+
 .act{
   margin-top: -90px;
+  width: 100%;
+  position: relative;
+ 
+ 
 }
 
+
+
 .act img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .35s ease;
   border-radius: 20px;
 }
 
+.act:hover img{ 
+  filter: brightness(90%);
+  transform: scale(1.1);
+  z-index: 2;
+  border-radius: 1rem;
+}
+
+.acttext{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+ 
+
+}
+
+.acttext h2{
+  margin-top: 80px !important;
+  color: white;
+}
+
+/* .acttext:hover{
+  filter: brightness(90%);
+  transform: scale(1.1);
+  z-index: 50;
+  border-radius: 1rem;
+}  */
+
+/* .acttext p {
+  
+    text-align: center;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.6rem;
+    background: rgba(255,255,255,0.2);
+    height:4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+  
+  } */
+
+
+  .acttext h2{
+    position: absolute;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+    padding: 30px;
+  }
+
+
+.acttext{
+  transition: 0.5s;
+}
+
+.act img:hover{
+
+}
+
+
+
 .consultation{
-  background-color: white;
+  background-color: powderblue;
   box-shadow: 0 0 15px rgb(0 0 0 /15%);
   width: 70%;
   margin: auto ;
@@ -1748,9 +1863,9 @@ position: relative;
   background-image: url(../images/jon-tyson-P2aOvMMUJnY-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  
   width: 100%;
   margin-top: 150px;
+  height: 60%;
   background-attachment: fixed;
 }
 
@@ -1917,10 +2032,37 @@ position: relative;
 
 
  @media screen and (max-width:768px) {
+  .etab1 .itext {
+    display: flex;
+    height: 100%;
+    line-height: 150px;
+    flex-wrap: wrap;
+    flex: none !important;
+    /* flex: 0 0 60%; */
+    align-items: center;
+    position: relative;
+
+  }
+  .popup-content{
+    width: 90%;
+    padding: 1.2em !important;
+  }
+  .offers{
+    margin-top: -480px;
+  }
+  .acttext h2{
+    margin: 2px;
+
+  }
   .consultation{
     width: 90%;
     padding: 1em;
   }
+
+.act{
+  padding: 1em;
+  width: 100%;
+}
   
   .family{
     width: 90%;
@@ -1969,6 +2111,7 @@ position: relative;
   }
   .adultservice{
     flex-direction: column;
+    padding: 1.2em;
     
   }
   .ex{
@@ -1986,9 +2129,10 @@ position: relative;
   .stream{
     /* text-align: center; */
     margin-top: 10px;
+    text-align: center;
     float: left;
-    padding: 20px;
-    margin-top: 60%;
+    padding: 30px;
+    margin-top: 50%;
     width: 100%;
     background: rgba(255, 255, 255, 0.384);
   }
@@ -2030,7 +2174,7 @@ position: relative;
   .tab2{
     /* padding: 1.2em; */
     /* height: fit-content; */
-    width: 100%;
+    width: 90%;
     height: 50vh;
     background-position: 50% 50%; 
     background-repeat: no-repeat; 
@@ -2228,7 +2372,7 @@ input[type=radio]:checked {
   }
 
   .about{
-    padding: 1.2em;
+    padding: 1em;
   }
   
 
@@ -2748,9 +2892,9 @@ section#timeline article:nth-child(5) div.inner h2:after {
   .footer-distributed h2{
     font-size: 37px;
   }
-  .event-container{
+  /* .event-container{
     margin: 20px;
-  }
+  } */
 
   .event .event-left{
       padding: 0;
@@ -2832,7 +2976,6 @@ section#timeline article:nth-child(5) div.inner h2:after {
  .comp{
   color: red;
  }
-
 
 
  
